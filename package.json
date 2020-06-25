@@ -1,0 +1,16 @@
+{
+  "name": "Student-Registration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start" : "nodemon app"
+  },
+ "proxy" : "127.0.0.1:3000",
+  "keywords": [],
+  "author": "Aamir Mohammed",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

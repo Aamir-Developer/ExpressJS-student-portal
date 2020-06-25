@@ -16,6 +16,14 @@
 
 name, studentId, email, password, age,dob
 
+// Improvements
+1. Student must give all properties to register.
+2. Fields must not be empty.
+3. Admin can do all operations.
+4. Student can only make /new request, but not other requests.
+5. Resive all from scratch.
+
+
 
 
 

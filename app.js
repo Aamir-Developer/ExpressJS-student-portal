@@ -1,8 +1,28 @@
 const express = require('express')
+const mongoose = require('mongoose')
 const app = express()
+const studentData =  require('./model/studentschema')
 const port = process.env.PORT || 3000
-
 app.use(express.json())
+
+// Database logic
+let uri = "mongodb+srv://aamir2021:92119211@cluster0.0ynpe.mongodb.net/studentdata?retryWrites=true&w=majority"
+
+ mongoose.connect(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+},(err) => {
+    if (err) console.log("err while connecting to db");
+    else{console.log("connection is successful")}
+} );
+
+mongoose.set('useCreateIndex', true);
+
+// const Cat = mongoose.model('Cat', { name: String });
+
+// const kitty = new Cat({ name: 'Zildjian' });
+// kitty.save().then(() => console.log('meow'));
+
 let studentArr = []
 
 app.get("/get", (req, res) => {
@@ -13,8 +33,12 @@ app.get("/get", (req, res) => {
 app.post("/new", (req, res) => {
 
     let student = req.body
-    studentArr.push(student)
-    res.send(studentArr)
+    const data = new studentData(student)
+    data.save().then((resp) => res.send({user : resp}))
+    .catch(err =>  res.send(err))
+
+    // studentArr.push(student)
+    // res.send(studentArr)
 })
 
 app.get("/get/:id", (req, res) => {

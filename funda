@@ -23,6 +23,31 @@ name, studentId, email, password, age,dob
 4. Student can only make /new request, but not other requests.
 5. Resive all from scratch.
 
+best practice
+res.send("your acc is created")
+res.send({sum : total, sub : subtraction, "output" : "your acc is created"})
+res.json({sum : total, sub : subtraction, "output" : "your acc is created"})
+
+...mongoose connect...
+local...
+local db..
+
+express documentation
+es6 concepts..
+mongoose documentation 
+
+
+student wala kaam
+27 to aaj..revise
+
+bank...proper im..
+
+advance kaama
+
+create RUD request search kar 
+
+
+
 
 
 
